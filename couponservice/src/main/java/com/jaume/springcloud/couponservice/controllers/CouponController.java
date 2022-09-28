@@ -20,6 +20,7 @@ public class CouponController {
     @RequestMapping(method = RequestMethod.GET)
     public List<Coupon> getCouponByCode()
     {
+        System.out.println("Server 1");
         return couponRepository.findAll();
     }
 

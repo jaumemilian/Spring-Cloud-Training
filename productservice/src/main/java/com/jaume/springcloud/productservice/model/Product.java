@@ -1,9 +1,6 @@
 package com.jaume.springcloud.productservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -15,6 +12,9 @@ public class Product {
     private String name;
     private String description;
     private BigDecimal price;
+
+    @Transient
+    private String couponCode;
 
     public long getId() {
         return id;
@@ -46,5 +46,13 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public String getCouponCode() {
+        return couponCode;
+    }
+
+    public void setCouponCode(String couponCode) {
+        this.couponCode = couponCode;
     }
 }
